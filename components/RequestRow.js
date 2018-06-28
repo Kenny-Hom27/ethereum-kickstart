@@ -23,7 +23,8 @@ class RequestRow extends Component {
   render() {
     const { Cell, Row } = Table;
     const { id, request, approversCount } = this.props;
-    const readyToFinalize = request.approvalCount > request.approversCount / 2;
+    const readyToFinalize = request.approvalCount > approversCount / 2;
+    console.log(request.complete)
     return (
       <Row disabled={request.complete} positive={readyToFinalize && !request.complete}>
         <Cell>{id}</Cell>
